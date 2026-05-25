@@ -1,9 +1,8 @@
-import os
-
 import joblib
 import pandas as pd
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from h11 import Response
 from pydantic import BaseModel
 from typing import List
 from app.calculate_matches import calculate_matches, calculate_penalties_coefficients
@@ -41,6 +40,11 @@ class RequestPayload(BaseModel):
 
 pipeline = joblib.load("./joblib_files/pipeline.joblib")
 knn = joblib.load('./joblib_files/knn_model.joblib')
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return Response(status_code=204, headers=[])
 
 
 @app.post("/predict")
