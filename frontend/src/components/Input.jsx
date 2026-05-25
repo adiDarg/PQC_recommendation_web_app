@@ -84,7 +84,7 @@ function Input() {
     };
 
     try {
-        const response = await fetch("/api/predict", {
+        const response = await fetch("https://pqc-recommendation-web-app-backend.vercel.app/predict", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
