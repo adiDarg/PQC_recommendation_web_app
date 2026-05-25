@@ -9,6 +9,10 @@
       "dest": "backend/main.py"
     },
     {
+      "source": "/((?!api|predict).*\\.[a-zA-Z0-9]+)",
+      "destination": "/frontend/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "frontend/index.html"
     }
