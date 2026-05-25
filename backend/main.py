@@ -10,8 +10,8 @@ from app.calculate_matches import calculate_matches, calculate_penalties_coeffic
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",  # Local development environment URL
-    "https://your-frontend-app.vercel.app"  # Your eventual live deployment URL
+    "http://localhost:5173",
+    "https://pqc-recommendation-web-app.vercel.app/"
 ]
 
 app.add_middleware(
