@@ -11,7 +11,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:5173",
-    "https://pqc-recommendation-web-app.vercel.app/"
+    "https://pqc-recommendation-web-app.vercel.app"
 ]
 
 app.add_middleware(
