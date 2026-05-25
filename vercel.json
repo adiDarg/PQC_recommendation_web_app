@@ -1,20 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-
-  ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/predict",
-      "dest": "backend/main.py"
-    },
-    {
-      "source": "/((?!api|predict).*\\.[a-zA-Z0-9]+)",
-      "destination": "/frontend/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
