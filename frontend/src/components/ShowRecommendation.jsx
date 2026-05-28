@@ -29,7 +29,7 @@ function ShowRecommendation() {
             <div className="recommendation-card">
                 <span className="recommendation-label">Digital Signature Algorithm (DSA)</span>
                 <div className="recommendation-value">{resultData.DSA.name}</div>
-                <div className="recommendation-full-name">{resultData.KEM.fullName}</div>
+                <div className="recommendation-full-name">{resultData.DSA.fullName}</div>
                 <div className="recommendation-category">Category: {resultData.DSA.category}</div>
                 <p className="recommendation-description">{resultData.DSA.description}</p>
             </div>
