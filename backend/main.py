@@ -6,6 +6,7 @@ from h11 import Response
 from pydantic import BaseModel
 from typing import List
 from app.calculate_matches import calculate_matches, calculate_penalties_coefficients
+from app.getAlgorithmData import get_algorithm_explanation
 
 app = FastAPI()
 
@@ -69,5 +70,6 @@ def predict_data(data: RequestPayload):
         data.weightBandwidth, data.weightCompute,
         data.weightMemory, data.weightSecurity
     )
-
-    return results[prediction]
+    response = {'KEM': get_algorithm_explanation(results[prediction]['KEM']),
+                'DSA': get_algorithm_explanation(results[prediction]['DSA'])}
+    return response
