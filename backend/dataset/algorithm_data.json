@@ -1,11 +1,11 @@
 {
   "ML-KEM": {
-    "name": "Module-Lattice-Based Key-Encapsulation Mechanism (formerly Kyber)",
+    "name": "ML-KEM (Module-Lattice-Based Key-Encapsulation Mechanism, formerly Kyber)",
     "category": "Lattice-based (MLWE)",
     "description": "The primary NIST-standardized Key-Encapsulation Mechanism for general use. It relies on the mathematical difficulty of solving learning-with-errors problems over module lattices. It provides an excellent balance of small key sizes, rapid key generation, and highly efficient encapsulation and de-encapsulation speeds. It is the default recommendation for securing standard communication protocols (like TLS) against future quantum computer attacks."
   },
   "BIKE": {
-    "name": "Bit Flipping Key Encapsulation",
+    "name": "BIKE (Bit Flipping Key Encapsulation)",
     "category": "Code-based (QC-MDPC)",
     "description": "A Key Encapsulation Mechanism based on error-correcting codes, specifically utilizing Quasi-Cyclic Moderate Density Parity-Check codes. It is designed as a highly efficient, general-purpose cryptographic system. While its initial key generation process is computationally heavier, it offers relatively small key sizes and fast encapsulation speeds, making it a strong mathematical alternative to lattice-based systems."
   },
@@ -15,7 +15,7 @@
     "description": "A highly conservative Key Encapsulation Mechanism built on a foundational crypto-system from 1978. It has withstood decades of intensive cryptanalytic scrutiny, offering exceptionally high confidence in its security. Its defining characteristic is the extreme asymmetry in its data sizes: it produces incredibly small ciphertexts, but requires massive public keys (often exceeding one megabyte). It is best suited for specialized environments where public keys can be pre-loaded or are rarely transmitted, but ciphertexts are exchanged frequently."
   },
   "HQC": {
-    "name": "Hamming Quasi-Cyclic",
+    "name": "HQC (Hamming Quasi-Cyclic)",
     "category": "Code-based (QCSD)",
     "description": "A Key Encapsulation Mechanism based on the established mathematics of error-correcting codes, specifically relying on the hardness of decoding random linear codes. Its design prioritizes strict, rigorous mathematical security proofs to guarantee its resilience against attacks. Because of this emphasis on maximum provable security guarantees, it requires moderately larger key sizes and operates at slightly slower speeds. It is an excellent choice when theoretical security confidence is prioritized over raw performance."
   },
@@ -25,17 +25,17 @@
     "description": "One of the oldest and most extensively studied lattice-based Key Encapsulation Mechanisms. Operating on structured lattices, it offers a highly secure, heavily vetted cryptographic framework that has been in the public domain for many years, ensuring no intellectual property encumbrances. It provides reliable performance with balanced key sizes and fast operational speeds, serving as a highly trusted and robust option for secure key exchange."
   },
   "ML-DSA": {
-    "name": "Module-Lattice-Based Digital Signature Algorithm (formerly Dilithium)",
+    "name": "ML-DSA (Module-Lattice-Based Digital Signature Algorithm, formerly Dilithium)",
     "category": "Lattice-based (MLWE, MSIS)",
     "description": "The primary NIST-standardized digital signature algorithm for general-purpose authentication. Based on the hardness of module lattice problems, it delivers strong all-around performance with reasonable public key and signature sizes. Its high efficiency in both signing and verification operations makes it the default, highly recommended choice for everyday digital authentication, secure boot processes, and document signing."
   },
   "SLH-DSA": {
-    "name": "Stateless Hash-Based Digital Signature Algorithm (formerly SPHINCS+)",
+    "name": "SLH-DSA (Stateless Hash-Based Digital Signature Algorithm, formerly SPHINCS+)",
     "category": "Hash-based",
     "description": "A highly conservative, NIST-standardized digital signature algorithm. Unlike most modern cryptography that relies on complex mathematical equations, its security is based entirely on the proven strength of the underlying hash functions, making it exceptionally resilient to future cryptanalysis. As a stateless algorithm, it does not require keeping track of previously used signatures. While it produces significantly larger signatures and requires more processing time, it offers the highest possible confidence against quantum computing threats."
   },
   "Falcon": {
-    "name": "Fast-Fourier Lattice-based Compact Signatures",
+    "name": "Falcon (Fast-Fourier Lattice-based Compact Signatures)",
     "category": "Lattice-based (NTRU, SIS)",
     "description": "A digital signature algorithm engineered specifically for environments where bandwidth and storage are severely constrained. It uses Fast-Fourier techniques over lattices to achieve exceptionally minimal signature and public key sizes, alongside incredibly fast verification speeds. However, generating the keys and creating the signatures require complex, high-precision floating-point arithmetic, which can be challenging to implement securely on low-power or embedded devices."
   }
