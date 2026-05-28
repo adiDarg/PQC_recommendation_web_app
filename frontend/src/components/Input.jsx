@@ -57,7 +57,6 @@ function Input() {
     return (
         <div className="app-container">
             <Header/>
-            <hr className="pqc-divider" />
             <BasicInput formData={formData} setFormProperty={setFormProperty}/>
 
             <button onClick={handleSetAdvancedInput}>
