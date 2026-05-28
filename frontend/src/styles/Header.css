@@ -1,0 +1,100 @@
+/* Container Layout */
+.pqc-container {
+  max-width: 750px; /* Increased width to let the text breathe and stretch */
+  margin: 40px auto;
+  padding: 32px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Typography & Headings */
+.pqc-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-h);
+  line-height: 1.25;
+  margin-bottom: 12px;
+  text-align: center; /* Title stays centered */
+  letter-spacing: -0.02em;
+}
+
+.pqc-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 32px;
+  text-align: center; /* Subtitle stays centered */
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+.pqc-section-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: left; /* Switched to left alignment */
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* Structural Elements */
+.pqc-divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+.pqc-description {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.6;
+  text-align: left; /* Left alignment clears up the dense wall visual effect */
+  margin-bottom: 24px;
+}
+
+/* Lists & Step Layouts */
+.pqc-steps-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Forces list items to align left */
+}
+
+.pqc-step-item {
+  margin-bottom: 28px;
+}
+
+.pqc-step-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 6px;
+}
+
+.pqc-step-text {
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* Sub-lists (KEM / DSA bullet points) */
+.pqc-sub-list {
+  list-style-type: disc;
+  padding-left: 24px; /* Increases indentation for nested items */
+  margin-top: 12px;
+}
+
+.pqc-sub-list-item {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.pqc-highlight {
+  color: var(--text-h);
+  font-weight: 600;
+}

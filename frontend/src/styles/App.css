@@ -1,0 +1,31 @@
+/* Core Layout Wrapper */
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Form Actions Button Control Row */
+.form-actions-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 650px;
+  margin: 20px auto 40px;
+}
+
+/* Secondary Button Reset Override */
+.btn-secondary {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  margin: 0; /* Clears global button margins */
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--text);
+  color: var(--text-h);
+}

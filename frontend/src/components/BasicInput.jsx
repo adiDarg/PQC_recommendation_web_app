@@ -1,10 +1,11 @@
+import '../styles/FormLayouts.css';
+
 function BasicInput({formData, setFormProperty}) {
     return (
         <div className="form-container">
             <h3 className="section-title">System Load & Performance Metrics</h3>
             <p className="section-subtitle">Provide current utilization metrics for accurate analysis.</p>
 
-            {/* CPU Usage Group */}
             <div className="form-grid">
                 <div className="form-group">
                     <label htmlFor="cpu-idle" className="form-label">
@@ -41,7 +42,6 @@ function BasicInput({formData, setFormProperty}) {
                 </div>
             </div>
 
-            {/* Throughput Group */}
             <div className="form-grid mt-4">
                 <div className="form-group">
                     <label htmlFor="tps-avg" className="form-label">Average Throughout</label>
@@ -74,9 +74,8 @@ function BasicInput({formData, setFormProperty}) {
                 </div>
             </div>
 
-            {/* RAM Group */}
             <div className="form-group mt-4">
-                <label htmlFor="ram-usage" className="form-label">Typical Memory Usage</label>
+                <label htmlFor="ram-usage" className="form-label">Typical RAM Memory Available</label>
                 <div className="input-with-unit">
                     <input
                         id="ram-usage"
@@ -91,7 +90,7 @@ function BasicInput({formData, setFormProperty}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default BasicInput;

@@ -1,0 +1,52 @@
+:root {
+  --social-bg: #121214;
+  --border: rgba(130, 87, 229, 0.2);
+  --text-h: #ffffff;
+  --text: #a8a8b3;
+  --accent: #8257e5;
+  --accent-bg: rgba(130, 87, 229, 0.1);
+  --accent-border: #9466ff;
+}
+
+body {
+  margin: 0;
+  background-color: #141214;
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Global Button Styles */
+button {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+button:hover {
+  border-color: var(--accent-border);
+  background: rgba(130, 87, 229, 0.15);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Helper Utilities */
+.text-center {
+  text-align: center;
+  align-items: center;
+}
+
+/* Structural Spacing Classes (Used in your JSX) */
+.mt-4 {
+  margin-top: 16px;
+}
