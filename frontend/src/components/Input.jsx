@@ -1,5 +1,5 @@
 import BasicInput from "./BasicInput.jsx";
-import {useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import AdvancedInput from "./AdvancedInput.jsx";
 import { useNavigate } from 'react-router-dom';
 import Header from "./Header.jsx";
@@ -57,6 +57,7 @@ function Input() {
     return (
         <div className="app-container">
             <Header/>
+            <hr className="pqc-divider" />
             <BasicInput formData={formData} setFormProperty={setFormProperty}/>
 
             <button onClick={handleSetAdvancedInput}>
