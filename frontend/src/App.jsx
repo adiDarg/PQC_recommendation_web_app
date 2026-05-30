@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Input from "./components/Input.jsx";
 import ShowRecommendation from "./components/ShowRecommendation.jsx";
 import {FormProvider} from "./components/FormContext.jsx";
-//Form provider - Context of data sent to API
 function App() {
     return (
         <FormProvider>
