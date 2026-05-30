@@ -48,7 +48,6 @@ async def favicon():
     return Response(status_code=204, headers=[])
 
 
-# Returns prediction for data including name, fullName, family and description
 @app.post("/predict")
 def predict_data(data: RequestPayload):
     original_order = ['idle_CPU_usage', 'peak_CPU_usage', 'avg_throughput_TPS', 'peak_throughput_TPS', 'RAM_size_GB']
