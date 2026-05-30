@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import Header from "./Header.jsx";
 import '../styles/App.css';
 import {FormContext} from "./FormContext.jsx";
+import LoadingOverlay from "./LoadingOverlay.jsx";
 
 function Input() {
     const navigate = useNavigate();
     const [showAdvanced, setShowAdvanced] = useState(false);
+    const [loading, setLoading] = useState(false)
     const { formData, setFormProperty, handleClearForm, toggleProblemSelection } = useContext(FormContext)
 
     function handleSetAdvancedInput() {
@@ -17,6 +19,10 @@ function Input() {
 
     const handleSubmitData = async (e) => {
         e.preventDefault();
+        //Only add loading screen if user has been waiting for over a second
+        let loadingTimer = setTimeout(() => {
+            setLoading(true);
+        }, 1000);
 
         const payload = {
             cpuIdle: parseFloat(formData.cpuIdle) || 0.0,
@@ -47,15 +53,21 @@ function Input() {
             }
 
             const resultData = await response.json();
+
+            clearTimeout(loadingTimer);
+
             navigate('/recommendation', {state: {resultData}});
 
         } catch (error) {
             console.error("Failed to fetch prediction:", error);
+            clearTimeout(loadingTimer);
+            setLoading(false)
         }
     };
 
     return (
         <div className="app-container">
+            {loading && <LoadingOverlay/>}
             <Header/>
             <BasicInput formData={formData} setFormProperty={setFormProperty}/>
 
