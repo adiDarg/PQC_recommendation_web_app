@@ -70,6 +70,9 @@ def predict_data(data: RequestPayload):
         data.weightBandwidth, data.weightCompute,
         data.weightMemory, data.weightSecurity
     )
-    response = {'KEM': get_algorithm_explanation(results[prediction]['KEM']),
-                'DSA': get_algorithm_explanation(results[prediction]['DSA'])}
+    result = results[prediction]
+    response = {'KEM': get_algorithm_explanation(result['KEM']),
+                'DSA': get_algorithm_explanation(result['DSA'])}
+    response['KEM']['name'] = result['KEM']
+    response['DSA']['name'] = result['DSA']
     return response
