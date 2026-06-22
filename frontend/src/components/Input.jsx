@@ -1,7 +1,7 @@
 import BasicInput from "./BasicInput.jsx";
 import React, {useContext, useState} from "react";
 import AdvancedInput from "./AdvancedInput.jsx";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Header from "./Header.jsx";
 import '../styles/App.css';
 import {FormContext} from "./FormContext.jsx";
@@ -11,7 +11,7 @@ function Input() {
     const navigate = useNavigate();
     const [showAdvanced, setShowAdvanced] = useState(false);
     const [loading, setLoading] = useState(false)
-    const { formData, setFormProperty, handleClearForm, toggleProblemSelection } = useContext(FormContext)
+    const {formData, setFormProperty, handleClearForm, toggleProblemSelection} = useContext(FormContext)
 
     function handleSetAdvancedInput() {
         setShowAdvanced(prevState => !prevState);
@@ -40,13 +40,29 @@ function Input() {
         };
 
         try {
-            const response = await fetch("https://pqc-recommendation-web-app-backend.vercel.app/predict", {
+            const devUrl = "http://127.0.0.1:8000/predict";
+            const prodUrl = "https://pqc-recommendation-web-app-backend.vercel.app/predict";
+
+            const requestOptions = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(payload),
-            });
+            };
+
+            let response;
+            if (process.env.NODE_ENV === "development") {
+                try {
+                    response = await fetch(devUrl, requestOptions);
+                    if (!response.ok) throw new Error("Dev server error status");
+                } catch (error) {
+                    // Fallback to production on network failure or bad status
+                    response = await fetch(prodUrl, requestOptions);
+                }
+            } else {
+                response = await fetch(prodUrl, requestOptions);
+            }
 
             if (!response.ok) {
                 throw new Error(`Server responded with status: ${response.status}`);
